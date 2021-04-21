@@ -1,0 +1,18 @@
+{
+  "name": "eslint-rich-reporter",
+  "version": "0.0.0",
+  "description": "An eslint html reporter with several useful features.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eslint",
+    "formatter",
+    "html",
+    "reporter",
+    "useful"
+  ],
+  "author": "Deland Li",
+  "license": "ISC"
+}
