@@ -3,14 +3,10 @@
 
 ## Usage
 
+```bash
+yarn add -D eslint-rich-reporter
 
-## Demo
-
-```shell
-yarn
-yarn start
+npx eslint -f node_modules/eslint-html-reporter/reporter.js -o eslint-report.html
 ```
-
-Listening on [localhost:4747](http://localhost:4747)
 
 ## Features

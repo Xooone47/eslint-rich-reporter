@@ -5,6 +5,10 @@
 cjs
 es
 
-report-demo.html
+build
+
+# build output
+templates
+reporter.js
 
 yarn-error.log
