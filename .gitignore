@@ -4,6 +4,7 @@
 /__coverage__
 cjs
 es
-index.d.ts
+
+report-demo.html
 
 yarn-error.log

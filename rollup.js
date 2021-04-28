@@ -28,7 +28,7 @@ const main = async () => {
   };
 
   const bundle = await rollup(inputOptions);
-  bundle.write({format: 'cjs', file: 'cjs/reporter.js', sourcemap: false});
+  bundle.write({format: 'cjs', file: 'build/reporter.js', sourcemap: false});
 };
 
 main();

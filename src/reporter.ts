@@ -2,10 +2,11 @@
 const Mustache = require('mustache');
 const fs = require('fs');
 const path = require('path');
-const mockdata = require('./mock-result.json');
 
-// get rule detail link
-// support list: eslint, eslint-plugin-react, eslint-plugin-vue, eslint-plugin-import, @typescript-eslint/eslint-plugin
+/* create rule detail link to its document
+ * supporting:
+ * eslint, eslint-plugin-react, eslint-plugin-vue, eslint-plugin-import, @typescript-eslint/eslint-plugin
+ */
 const getRuleLink = (rule: string) => {
   const fragments = rule.split('/');
   if (!fragments.length) {
@@ -29,10 +30,7 @@ const getRuleLink = (rule: string) => {
 };
 
 const HTML_TEMPLATE_PATH = path.resolve(__dirname, 'templates', 'report.html');
-const HTML_TEMPLATE = fs.readFileSync(HTML_TEMPLATE_PATH, 'utf-8');
-
 const STYLE_TEMPLATE_PATH = path.resolve(__dirname, 'templates', 'styles.css');
-const STYLE_TEMPLATE = fs.readFileSync(STYLE_TEMPLATE_PATH, 'utf-8');
 
 const sortByCount = (a: any, b: any): number => (b.count - a.count);
 
@@ -104,6 +102,9 @@ interface CreateReporter {
 const createReporter: CreateReporter = data => {
   const summary = calcSummary(data);
 
+  const HTML_TEMPLATE = fs.readFileSync(HTML_TEMPLATE_PATH, 'utf-8');
+  const STYLE_TEMPLATE = fs.readFileSync(STYLE_TEMPLATE_PATH, 'utf-8');
+
   const result = Mustache.render(
     HTML_TEMPLATE,
     {
@@ -116,11 +117,5 @@ const createReporter: CreateReporter = data => {
 
   return result;
 };
-
-const report = createReporter(mockdata);
-
-const HTML_OUTPUT_PATH = path.resolve(__dirname, 'report.html');
-
-fs.writeFileSync(HTML_OUTPUT_PATH, report);
 
 module.exports = createReporter;
