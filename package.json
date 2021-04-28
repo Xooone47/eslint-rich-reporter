@@ -1,25 +1,31 @@
 {
   "name": "eslint-rich-reporter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An eslint html reporter with several useful features.",
   "main": "reporter.js",
   "types": "index.d.ts",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint -c ./configs/.eslintrc.js 'src/**/*.ts'",
     "build": "sh ./scripts/build.sh",
     "clear": "rm -rf build report-demo.html templates reporter.js",
     "pre-publish": "yarn build && cp -r build/* . && rm -rf build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xooone47/eslint-rich-reporter"
+  },
+  "homepage": "https://github.com/Xooone47/eslint-rich-reporter",
   "keywords": [
     "eslint",
     "formatter",
     "html",
     "reporter",
-    "useful"
+    "useful",
+    "rich"
   ],
-  "author": "Deland Li",
+  "author": {
+    "name": "Deland Li",
+    "email": "insidethe47s@qq.com"
+  },
   "license": "ISC",
   "files": [
     "templates", "reporter.js"
