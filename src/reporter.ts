@@ -6,7 +6,7 @@ const path = require('path');
  * supporting:
  * eslint, eslint-plugin-react, eslint-plugin-vue, eslint-plugin-import, @typescript-eslint/eslint-plugin
  */
-const getRuleLink = (rule: string) => {
+const getRuleLink = (rule: string): string => {
   const fragments = rule.split('/');
   if (!fragments.length || fragments.length > 2) {
     return '';
