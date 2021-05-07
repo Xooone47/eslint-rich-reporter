@@ -13,8 +13,8 @@ npx eslint -f node_modules/eslint-rich-reporter/reporter.js -o eslint-report.htm
 
 ### Result Summary
 
-![Demo summary](./assets/demo-summary.jpg)
+![Result Summary](./assets/demo-summary.jpg)
 
 ### File Details
 
-![Demo summary](./assets/demo-files.jpg)
+![File Details](./assets/demo-files.jpg)
