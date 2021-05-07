@@ -78,12 +78,11 @@
             <tbody>
               {{#filesWithProblems}}
               <tr class="file-detail-summary">
-                <td>{{filePath}}</td>
-                <td>{{errorCount}} errors</td>
-                <td>{{warningCount}} warnings</td>
+                <td class="file-detail-summary-file-path">{{filePath}}</td>
+                <td class="file-detail-summary-problem-count">{{errorCount}} errors, {{warningCount}} warnings</td>
               </tr>
               <tr class="file-detail-content">
-                <td colspan="3">
+                <td colspan="2">
                   <div class="file-detail-messages">
                     {{#messages}}
                     <div class="file-detail-message-row">

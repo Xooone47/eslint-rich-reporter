@@ -134,6 +134,14 @@ thead {
   background: #f2dede;
 }
 
+.file-detail-summary-file-path {
+  text-align: left;
+}
+
+.file-detail-summary-problem-count {
+  text-align: right;
+}
+
 .file-detail-message-row .error {
   color: #b94a48;
   font-weight: bolder;
