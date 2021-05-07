@@ -1,4 +1,3 @@
-
 const Mustache = require('mustache');
 const fs = require('fs');
 const path = require('path');
@@ -9,7 +8,7 @@ const path = require('path');
  */
 const getRuleLink = (rule: string) => {
   const fragments = rule.split('/');
-  if (!fragments.length) {
+  if (!fragments.length || fragments.length > 2) {
     return '';
   } else if (fragments.length === 1) {
     return `https://eslint.org/docs/rules/${fragments[0]}`;
@@ -41,7 +40,20 @@ const calcSummary = (data: any []) => {
   let totalFixableErrorCount = 0;
   let totalFixableWarningCount = 0;
 
-  const filesWithProblems = data.filter(item => item.errorCount || item.warningCount);
+  const filesWithProblems = data
+    .filter(item => item.errorCount || item.warningCount)
+    .map(item => {
+      const messages = item.messages;
+
+      return {
+        ...item,
+        messages: messages.map(problem => ({
+          ...problem,
+          problemType: problem.severity === 1 ? 'Warning' : 'Error',
+          problemClass: problem.severity === 1 ? 'warning' : 'error',
+        }))
+      }
+    });
 
   const problemMap = {};
 
@@ -55,13 +67,14 @@ const calcSummary = (data: any []) => {
     totalFixableWarningCount += fixableWarningCount;
 
     messages.forEach(problem => {
-      const {ruleId, severity, fix} = problem;
+      const {ruleId, fix, problemType, problemClass} = problem;
       if (problemMap[ruleId]) {
         problemMap[ruleId].count += 1;
       } else {
         problemMap[ruleId] = {
           ruleId,
-          problemType: severity === 1 ? 'Warning' : 'Error',
+          problemType,
+          problemClass,
           fixableClass: fix ? 'fixable-check' : '',
           count: 1,
         };

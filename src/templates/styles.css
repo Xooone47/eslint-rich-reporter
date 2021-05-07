@@ -1,6 +1,25 @@
 body {
   overflow: auto;
   margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+
+a {
+  color: #1890ff;
+  text-decoration: none;
+}
+
+table, th, td {
+  padding: 6px 15px;
+}
+
+table, tr {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #fbfbfb;
 }
 
 .header {
@@ -8,6 +27,8 @@ body {
   margin-bottom: 20px;
   background-color: #fbfbfb;
   border-bottom: 2px solid #f4f4f4;
+  color: #fff;
+  background: #262626;
 }
 
 .header-title {
@@ -19,11 +40,11 @@ body {
   display: inline-block;
   margin-left: 10px;
   font-size: 1rem;
-  color: #71777c;
+  color: #bfbfbf;
 }
 
 .content {
-  padding: 0 40px;
+  padding: 0 40px 20px 40px;
 }
 
 .block-title {
@@ -67,21 +88,18 @@ body {
   text-align: left;
 }
 
-table, th, td {
-  padding: 6px 15px;
+.problem-detail-row .error {
+  color: #b94a48;
+  font-weight: bolder;
 }
 
-table, tr {
-  border: 1px solid #ddd;
-  border-collapse: collapse;
+.problem-detail-row .warning {
+  color: #f0ad4e;
+  font-weight: bolder;
 }
 
 .table-align-center-col {
   text-align: center;
-}
-
-thead {
-  background-color: #fbfbfb;
 }
 
 #files {
@@ -109,4 +127,53 @@ thead {
   color: green;
   width: 1rem;
   height: 1rem;
+}
+
+.file-detail-summary {
+  color: #b94a48;
+  background: #f2dede;
+}
+
+.file-detail-message-row .error {
+  color: #b94a48;
+  font-weight: bolder;
+}
+
+.file-detail-message-row .warning {
+  color: #f0ad4e;
+  font-weight: bolder;
+}
+
+.file-detail-content {
+}
+
+.file-detail-messages {
+  font-size: 0.9rem;
+  padding: 10px 0px;
+}
+
+.file-detail-message-row + .file-detail-message-row {
+  margin-top: 5px;
+}
+
+.file-detail-message-row span {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.file-detail-message-row span:nth-child(1) {
+  color: #9da0a4;
+  width: 8%;
+}
+
+.file-detail-message-row span:nth-child(2) {
+  width: 50%;
+}
+
+.file-detail-message-row span:nth-child(3) {
+  width: 30%;
+}
+
+.file-detail-message-row span:nth-child(4) {
+  width: 10%;
 }

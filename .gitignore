@@ -12,3 +12,7 @@ templates
 reporter.js
 
 yarn-error.log
+
+demo/templates
+demo/reporter.js
+demo/report-demo.html

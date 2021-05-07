@@ -17,12 +17,12 @@
           <div class="block-title">Summary</div>
           <div class="summary-content">
             <div class="summary-item">
-              <span>Total Files:</span>
-              {{totalFileCount}}
+              <span>Clear Files:</span>
+              <span>{{clearFileCount}}</span>
             </div>
             <div class="summary-item">
-              <span>Clear Files:</span>
-              {{clearFileCount}}
+              <span>Total Files:</span>
+              <span>{{totalFileCount}}</span>
             </div>
             <div class="summary-item">
               <span>Total Errors:</span>
@@ -55,11 +55,11 @@
             </thead>
             <tbody>
               {{#problemDetails}}
-              <tr>
+              <tr class="problem-detail-row">
                 <td>
                   <a class="problem-rule-id" href="{{ruleLink}}" target="_blank">{{ruleId}}</a>
                 </td>
-                <td>{{problemType}}</td>
+                <td class="{{problemClass}}">{{problemType}}</td>
                 <td class="table-align-center-col">{{count}}</td>
                 <td class="table-align-center-col">
                   <svg class="{{fixableClass}} check-icon" viewBox="64 64 896 896" focusable="false" data-icon="check" width="1em" height="1em" fill="currentColor" aria-hidden="true">
@@ -75,19 +75,26 @@
         <div id="files">
           <div class="block-title">File Details</div>
           <table class="file-table">
-            <thead>
-              <tr>
-                <th>File Path</th>
-                <th>Errors</th>
-                <th>Warnings</th>
-              </tr>
-            </thead>
             <tbody>
               {{#filesWithProblems}}
-              <tr>
+              <tr class="file-detail-summary">
                 <td>{{filePath}}</td>
-                <td class="table-align-center-col">{{errorCount}}</td>
-                <td class="table-align-center-col">{{warningCount}}</td>
+                <td>{{errorCount}} errors</td>
+                <td>{{warningCount}} warnings</td>
+              </tr>
+              <tr class="file-detail-content">
+                <td colspan="3">
+                  <div class="file-detail-messages">
+                    {{#messages}}
+                    <div class="file-detail-message-row">
+                      <span>{{line}}:{{column}}</span>
+                      <span>{{message}}</span>
+                      <span>{{ruleId}}</span>
+                      <span class="{{problemClass}}">{{problemType}}</span>
+                    </div>
+                    {{/messages}}
+                  </div>
+                </td>
               </tr>
               {{/filesWithProblems}}
             </tbody>
