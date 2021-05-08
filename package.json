@@ -7,7 +7,7 @@
   "scripts": {
     "build": "sh ./scripts/build.sh",
     "clear": "rm -rf build report-demo.html templates reporter.js",
-    "pre-publish": "yarn build && cp -r build/* . && rm -rf build",
+    "prepublishOnly": "yarn build && cp -r build/* . && rm -rf build",
     "demo": "sh scripts/build-demo.sh"
   },
   "repository": {
