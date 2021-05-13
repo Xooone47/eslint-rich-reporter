@@ -1,6 +1,7 @@
 const Mustache = require('mustache');
 const fs = require('fs');
 const path = require('path');
+const chalk = require('chalk');
 
 /* create rule detail link to its document
  * supporting:
@@ -127,6 +128,8 @@ const createReporter: CreateReporter = data => {
       data,
     }
   );
+
+  console.log(chalk.green('Eslint Report Generated!\n'))
 
   return result;
 };
