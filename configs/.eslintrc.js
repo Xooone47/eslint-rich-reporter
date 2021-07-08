@@ -2,14 +2,10 @@ module.exports = {
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
     },
     "plugins": [
         "babel",
         "@typescript-eslint",
-        "react"
     ],
     "env": {
         "browser": true,
@@ -18,11 +14,6 @@ module.exports = {
     },
     "globals": {
         "features": true
-    },
-    "settings": {
-        "react": {
-            "version": "detect"
-        }
     },
     "rules": {
         "accessor-pairs": "warn",
@@ -274,101 +265,6 @@ module.exports = {
         "yield-star-spacing": "off",
         "yoda": "warn",
         "babel/object-curly-spacing": ["warn", "never"],
-        "react/default-props-match-prop-types": "warn",
-        "react/display-name": "off",
-        "react/forbid-component-props": "off",
-        "react/forbid-elements": "off",
-        "react/forbid-foreign-prop-types": "warn",
-        "react/forbid-prop-types": "off",
-        "react/jsx-boolean-value": "warn",
-        "react/jsx-closing-bracket-location": "warn",
-        "react/jsx-curly-spacing": "warn",
-        "react/jsx-equals-spacing": "warn",
-        "react/jsx-filename-extension": ["warn", {"extensions": [".js", ".jsx", ".tsx"]}],
-        "react/jsx-first-prop-new-line": "warn",
-        "react/jsx-handler-names": "off",
-        "react/jsx-indent-props": ["warn", 2],
-        "react/jsx-indent": ["warn", 2],
-        "react/jsx-key": "warn",
-        "react/jsx-max-props-per-line": ["warn", {"when": "multiline", "maximum": 1}],
-        "react/jsx-no-bind": ["warn", {"ignoreRefs": true}],
-        "react/jsx-no-comment-textnodes": "warn",
-        "react/jsx-no-duplicate-props": "warn",
-        "react/jsx-no-literals": "off",
-        "react/jsx-no-target-blank": "warn",
-        "react/jsx-no-undef": "warn",
-        "react/jsx-pascal-case": "warn",
-        "react/jsx-sort-props": "off",
-        "react/jsx-tag-spacing": "warn",
-        "react/jsx-uses-react": "off",
-        "react/jsx-uses-vars": "warn",
-        "react/jsx-wrap-multilines": "warn",
-        "react/no-array-index-key": "warn",
-        "react/no-children-prop": "warn",
-        "react/no-danger-with-children": "warn",
-        "react/no-danger": "warn",
-        "react/no-deprecated": "warn",
-        "react/no-did-mount-set-state": "off",
-        "react/no-did-update-set-state": "warn",
-        "react/no-direct-mutation-state": "warn",
-        "react/no-find-dom-node": "warn",
-        "react/no-is-mounted": "warn",
-        "react/no-multi-comp": ["warn", {"ignoreStateless": true}],
-        "react/no-render-return-value": "warn",
-        "react/no-set-state": "off",
-        "react/no-string-refs": "warn",
-        "react/no-unescaped-entities": "warn",
-        "react/no-unknown-property": "warn",
-        "react/no-unused-prop-types": "warn",
-        "react/no-will-update-set-state": "warn",
-        "react/prefer-es6-class": "warn",
-        "react/prefer-stateless-function": "warn",
-        "react/prop-types": "off",
-        "react/react-in-jsx-scope": "off",
-        "react/require-default-props": "warn",
-        "react/require-optimization": "off",
-        "react/require-render-return": "warn",
-        "react/self-closing-comp": ["warn", {"html": false}],
-        "react/sort-prop-types": "off",
-        "react/style-prop-object": "warn",
-        "react/void-dom-elements-no-children": "warn",
-        "react/sort-comp": [
-            0,
-            {
-                "order": [
-                    "static-properties",
-                    "static-methods",
-                    "state",
-                    "properties",
-                    "lifecycle",
-                    "everything-else",
-                    "render"
-                ],
-                "groups": {
-                    "static-properties": [
-                        "displayName",
-                        "propTypes",
-                        "contextTypes",
-                        "childContextTypes",
-                        "mixins",
-                        "statics"
-                    ],
-                    "lifecycle": [
-                        "getDefaultProps",
-                        "getInitialState",
-                        "constructor",
-                        "getChildContext",
-                        "componentWillMount",
-                        "componentDidMount",
-                        "componentWillReceiveProps",
-                        "shouldComponentUpdate",
-                        "componentWillUpdate",
-                        "componentDidUpdate",
-                        "componentWillUnmount"
-                    ]
-                }
-            }
-        ]
     },
     "overrides": [
         {
