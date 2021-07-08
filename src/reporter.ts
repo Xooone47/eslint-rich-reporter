@@ -52,8 +52,8 @@ const calcSummary = (data: any []) => {
           ...problem,
           problemType: problem.severity === 1 ? 'Warning' : 'Error',
           problemClass: problem.severity === 1 ? 'warning' : 'error',
-        }))
-      }
+        })),
+      };
     });
 
   const problemMap = {};
@@ -129,7 +129,7 @@ const createReporter: CreateReporter = data => {
     }
   );
 
-  console.log(chalk.green('Eslint Report Generated!\n'))
+  console.log(chalk.green('Eslint Report Generated!\n'));
 
   return result;
 };
