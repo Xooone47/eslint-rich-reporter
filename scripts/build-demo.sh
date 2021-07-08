@@ -1,3 +1,5 @@
+# deprecated
+
 yarn build
 
 cp -r build/* demo
