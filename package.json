@@ -1,6 +1,6 @@
 {
   "name": "eslint-rich-reporter",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "An eslint html reporter with several useful features.",
   "main": "reporter.js",
   "types": "index.d.ts",

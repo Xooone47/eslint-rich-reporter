@@ -8,6 +8,10 @@ const chalk = require('chalk');
  * eslint, eslint-plugin-react, eslint-plugin-vue, eslint-plugin-import, @typescript-eslint/eslint-plugin
  */
 const getRuleLink = (rule: string): string => {
+  if (!rule || typeof rule !== 'string') {
+    return '';
+  }
+
   const fragments = rule.split('/');
   if (!fragments.length || fragments.length > 2) {
     return '';
